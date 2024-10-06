@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.trialtrack.R
 import com.example.trialtrack.auth_feature.domain.AuthError
-import com.example.trialtrack.auth_feature.presentation.util.AuthResult
+import com.example.trialtrack.auth_feature.domain.AuthResult
 import com.example.trialtrack.core.presentation.StandardTextField
 
 @Composable

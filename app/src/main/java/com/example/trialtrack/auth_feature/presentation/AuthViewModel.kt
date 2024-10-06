@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.trialtrack.auth_feature.domain.AuthError
 import com.example.trialtrack.auth_feature.domain.repository.AuthRepository
-import com.example.trialtrack.auth_feature.presentation.util.AuthResult
+import com.example.trialtrack.auth_feature.domain.AuthResult
 import com.example.trialtrack.core.domain.states.StandardTextFieldStates
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -111,7 +111,6 @@ class AuthViewModel @Inject constructor(
                _passwordState.value = _passwordState.value.copy(error = AuthError.PasswordDoesNotHaveUpperCase)
                return
           }
-
           _passwordState.value = _passwordState.value.copy(error = null)
      }
 

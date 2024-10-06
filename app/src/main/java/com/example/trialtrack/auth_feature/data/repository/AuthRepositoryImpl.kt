@@ -6,7 +6,7 @@ import com.example.trialtrack.auth_feature.data.dto.request.LoginRequest
 import com.example.trialtrack.auth_feature.data.dto.request.SignUpRequest
 import com.example.trialtrack.auth_feature.data.remote.AuthApi
 import com.example.trialtrack.auth_feature.domain.repository.AuthRepository
-import com.example.trialtrack.auth_feature.presentation.util.AuthResult
+import com.example.trialtrack.auth_feature.domain.AuthResult
 import retrofit2.HttpException
 import javax.inject.Inject
 

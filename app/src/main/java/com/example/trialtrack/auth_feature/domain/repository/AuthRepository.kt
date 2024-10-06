@@ -1,6 +1,6 @@
 package com.example.trialtrack.auth_feature.domain.repository
 
-import com.example.trialtrack.auth_feature.presentation.util.AuthResult
+import com.example.trialtrack.auth_feature.domain.AuthResult
 
 interface AuthRepository {
 
