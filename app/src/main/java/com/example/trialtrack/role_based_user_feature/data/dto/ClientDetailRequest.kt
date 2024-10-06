@@ -5,5 +5,4 @@ data class ClientDetailRequest(
     val age:Int,
     val city:String,
     val state:String,
-    val image:String
 )

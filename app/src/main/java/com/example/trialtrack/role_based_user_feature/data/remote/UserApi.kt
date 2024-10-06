@@ -5,8 +5,10 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface UserApi {
-    @POST("/user/client/detail")
+    @POST("client/detail")
     suspend fun clientDetail(
-        @Body request: ClientDetailRequest
+        @Body request: ClientDetailRequest,
+        @Body userId:String
     )
+
 }
