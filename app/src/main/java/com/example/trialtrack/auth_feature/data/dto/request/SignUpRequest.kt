@@ -1,4 +1,4 @@
-package com.example.trialtrack.auth_feature.auth
+package com.example.trialtrack.auth_feature.data.dto.request
 
 data class SignUpRequest(
     val email:String,

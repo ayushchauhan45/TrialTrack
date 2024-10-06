@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">TrialTrack</string>
+    <string name="password_visible_content_description">PassWord is visible</string>
+    <string name="password_hidden_content_description">Password is Hidden</string>
+    <string name="this_field_cant_be_empty">This field can\'t be empty</string>
+    <string name="this_is_invalid_email">"The Email You have entered is Invalid "</string>
+    <string name="this_password_cant_be_this_short">Password must contain 8 characters</string>
+    <string name="this_password_doesnt_have_uppercase_char">Password Must Contain UpperCase Character</string>
+    <string name="this_password_does_not_have_special_char">This password should contain special charatcers</string>
+    <string name="sign_in">SignIn</string>
+    <string name="already_have_an_account">Already Have an account?</string>
 </resources>
