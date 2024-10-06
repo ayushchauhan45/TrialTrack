@@ -11,6 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigation
+import androidx.navigation.compose.rememberNavController
+import com.example.trialtrack.auth_feature.presentation.SignUpScreen
+import com.example.trialtrack.role_based_user_feature.presentation.ClientDetailScreen
 import com.example.trialtrack.ui.theme.TrialTrackTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +26,36 @@ class MainActivity : ComponentActivity() {
         setContent {
             TrialTrackTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = Screens.AuthNavGraph.route,
+                    modifier = Modifier.padding(innerPadding))
+                {
+                    navigation(
+                        route = Screens.AuthNavGraph.route,
+                        startDestination = Screens.SignUpScreen.route,
+                    ){
+                        composable(Screens.SignUpScreen.route) {
+                            SignUpScreen(navController = navController)
+                        }
+                        composable(Screens.LoginScreen.route) {
+
+                        }
+                    }
+                    navigation(
+                        route = Screens.UserNavGraph.route,
+                        startDestination = Screens.ClientDetailScreen.route
+                    ){
+                        composable(Screens.ClientDetailScreen.route) {
+                            ClientDetailScreen(navController = navController)
+                        }
+                    }
+
+                }
+
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TrialTrackTheme {
-        Greeting("Android")
-    }
-}

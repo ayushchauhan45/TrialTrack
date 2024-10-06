@@ -24,13 +24,16 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.example.trialtrack.R
+import com.example.trialtrack.Screens
 import com.example.trialtrack.auth_feature.domain.AuthError
 import com.example.trialtrack.auth_feature.domain.AuthResult
 import com.example.trialtrack.core.presentation.StandardTextField
 
 @Composable
 fun SignUpScreen(
+    navController: NavController,
     authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val emailState = authViewModel.emailState.value
@@ -44,7 +47,11 @@ fun SignUpScreen(
         authChannel.collect{result->
             when(result){
                 is AuthResult.Authorized -> {
-                    //Navigation
+                    navController.navigate(Screens.ClientDetailScreen.route){
+                        popUpTo(Screens.AuthNavGraph.route){
+                            inclusive = true
+                        }
+                    }
                 }
                 is AuthResult.UnAuthorized -> {
                     Toast.makeText(
